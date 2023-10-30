@@ -1,8 +1,9 @@
-const express=require('express');
-const authRouter=express.Router();
-const User=require("../models/user");
-const bcryptjs=require('bcryptjs');
-
+const express = require("express");
+const User = require("../models/user");
+const bcryptjs = require("bcryptjs");
+const authRouter = express.Router();
+//const jwt = require("jsonwebtoken");
+//const auth = require("../middlewares/auth");
 // SIGN UP
 authRouter.post("/api/signup", async (req, res) => {
   try {
@@ -18,9 +19,10 @@ authRouter.post("/api/signup", async (req, res) => {
     const hashedPassword = await bcryptjs.hash(password, 8);
 
     let user = new User({
+     name,
       email,
       password: hashedPassword,
-      name,
+
     });
     user = await user.save();
     res.json(user);

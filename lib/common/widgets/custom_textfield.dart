@@ -30,7 +30,9 @@ class CustomTextField extends StatelessWidget {
           return 'Enter your $hintText';
         }
         return null;
+
       },
+
       maxLines: maxLines,
     );
   }

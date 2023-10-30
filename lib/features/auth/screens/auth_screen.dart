@@ -22,7 +22,7 @@ class _AuthScreenState extends State<AuthScreen> {
   Auth _auth = Auth.signup;
   final _signUpFormKey = GlobalKey<FormState>();
   final _signInFormKey = GlobalKey<FormState>();
-  final AuthServices authService = AuthServices();
+  final AuthServices authServices = AuthServices();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
@@ -36,7 +36,7 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void signUpUser() {
-    authService.signUpUser(
+    authServices.signUpUser(
       context: context,
       email: _emailController.text,
       password: _passwordController.text,
@@ -167,6 +167,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomButton(
                           text: 'Sign In',
                           onTap: () {
+
                             if (_signInFormKey.currentState!.validate()) {
                               //signInUser();
                             }
