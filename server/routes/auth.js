@@ -2,7 +2,7 @@ const express = require("express");
 const User = require("../models/user");
 const bcryptjs = require("bcryptjs");
 const authRouter = express.Router();
-//const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 //const auth = require("../middlewares/auth");
 // SIGN UP
 authRouter.post("/api/signup", async (req, res) => {
@@ -31,4 +31,11 @@ authRouter.post("/api/signup", async (req, res) => {
   }
 });
 
+
+authRouter.post("/api/signin",async(req,res)=>{
+try{
+const{email,password}=req.body;
+const user=await User.
+}
+})
 module.exports=authRouter;
