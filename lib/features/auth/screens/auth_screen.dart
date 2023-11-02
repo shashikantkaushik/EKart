@@ -4,7 +4,6 @@ import 'package:cart/features/auth/services/auth_services.dart';
 import '../../../common/widgets/custom_button.dart';
 import '../../../common/widgets/custom_textfield.dart';
 import '../../../constants/global_variables.dart';
-
 enum Auth {
   signin,
   signup,
@@ -22,7 +21,7 @@ class _AuthScreenState extends State<AuthScreen> {
   Auth _auth = Auth.signup;
   final _signUpFormKey = GlobalKey<FormState>();
   final _signInFormKey = GlobalKey<FormState>();
-  final AuthServices authServices = AuthServices();
+  final AuthService authService = AuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
@@ -36,7 +35,7 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void signUpUser() {
-    authServices.signUpUser(
+    authService.signUpUser(
       context: context,
       email: _emailController.text,
       password: _passwordController.text,
@@ -44,13 +43,13 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
-  // void signInUser() {
-  //   authService.signInUser(
-  //     context: context,
-  //     email: _emailController.text,
-  //     password: _passwordController.text,
-  //   );
-  // }
+  void signInUser() {
+    authService.signInUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,9 +166,8 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomButton(
                           text: 'Sign In',
                           onTap: () {
-
                             if (_signInFormKey.currentState!.validate()) {
-                              //signInUser();
+                              signInUser();
                             }
                           },
                         )
@@ -184,6 +182,3 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 }
-
-
-
