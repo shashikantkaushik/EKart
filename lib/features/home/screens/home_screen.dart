@@ -1,12 +1,11 @@
-
-
-
-import 'package:flutter/cupertino.dart';
+import 'package:cart/constants/global_variables.dart';
+import 'package:cart/features/home/widgets/address_box.dart';
+import 'package:cart/features/home/widgets/carousel_image.dart';
+import 'package:cart/features/home/widgets/deal_of_day.dart';
+import 'package:cart/features/home/widgets/top_categories.dart';
+//import 'package:cart/screens/search_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../../../providers/user_provider.dart';
-import 'package:flutter/material.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,14 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('good');
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
           flexibleSpace: Container(
             decoration: const BoxDecoration(
-             // gradient: GlobalVariables.appBarGradient,
+              gradient: GlobalVariables.appBarGradient,
             ),
           ),
           title: Row(
@@ -99,12 +97,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: const [
-            //AddressBox(),
+            AddressBox(),
             SizedBox(height: 10),
-           // TopCategories(),
+            TopCategories(),
             SizedBox(height: 10),
-            // CarouselImage(),
-            // DealOfDay(),
+            CarouselImage(),
+            DealOfDay(),
           ],
         ),
       ),
