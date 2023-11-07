@@ -1,4 +1,5 @@
 import 'package:cart/constants/global_variables.dart';
+import 'package:cart/features/admin/screens/posts_screen.dart';
 //import 'package:cart/features/admin/screens/analtyics_screen.dart';
 //import 'package:cart/features/admin/screens/orders_screen.dart';
 //import 'package:cart/features/admin/screens/posts_screen.dart';
@@ -17,7 +18,7 @@ class _AdminScreenState extends State<AdminScreen> {
   double bottomBarBorderWidth = 5;
 
   List<Widget> pages = [
-   // const PostsScreen(),
+    const PostsScreen(),
    // const AnalyticsScreen(),
    // const OrdersScreen(),
   ];

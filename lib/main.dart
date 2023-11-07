@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'constants/global_variables.dart';
 import 'package:provider/provider.dart';
 
-import 'features/admin/admin_screen.dart';
+import 'features/admin/screens/admin_screen.dart';
 void main() {
   runApp(MultiProvider(providers:[
   ChangeNotifierProvider(

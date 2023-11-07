@@ -9,9 +9,9 @@ const auth = require("../middlewares/auth");
 authRouter.post("/api/signup", async (req, res) => {
   try {
     const { name, email, password } = req.body;
-print(hello);
+
     const existingUser = await User.findOne({email});
-    print(hello);
+
     if (existingUser) {
       return res
         .status(400)
