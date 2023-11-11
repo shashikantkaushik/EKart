@@ -38,7 +38,7 @@ console.log(e);
 //});
 
 app.listen(PORT,"0.0.0.0",()=>{
-console.log(`connnect ed at port ${PORT}`);
+console.log(`connnected at port ${PORT}`);
 });
 //0.0.0.0 bcz it can be accessed from anywhere it is an ip address
 //local host acess if we do not specify ip
